@@ -30,10 +30,13 @@ Select new environment
 Base interpreter should be your install of python and location should be inside the project in a directory called venv
 
 Then to activate the virtual environment you just created open a terminal (Alt+F12) and run the following command: 
-  source venv/Scripts/activate
+
+  ```source venv/Scripts/activate```
 
 The run the command: 
-  pip install -r requirements.txt
+
+  ```pip install -r requirements.txt```
+  
 If you would like to use some other python packages for creating the figures, simply add them to the requirements.txt and rerun the command. That way the rest of the group also gets the requirements when you push the next time. 
 
 
