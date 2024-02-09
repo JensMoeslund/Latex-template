@@ -1,6 +1,12 @@
 # Report template
 This is a template for writing reports at AAU. 
-The latex files are compiled locally on the computer. 
+
+The advantages of doing it this way: 
+- The latex files are compiled locally on the computer, giving a significant speedup in compile time.
+- Since the files are shared using git, if one of your group members fucks up it is only on their computer, and you can still compile. Therefore Please ensure the project can compile before pushing.
+- You can edit the files in your favorite text editor we have included setup guide for IntelliJ and VS Code.
+- With the texteditor comes tools such as GitHub copilot which can eliminate a lot of the boring stuff.
+- 
 
 ## Installing Tex
 There are several different Tex distributions to choose from for compiling tex. 
@@ -41,9 +47,13 @@ If you would like to use some other python packages for creating the figures, si
 
 
 
-## Visual Studio
+## Visual Studio Code
 
 
 
-## 
+## Extentions 
+Both for IntelliJ and VS Code there are several different extenstions which greatly enhances the experience. 
+- GitHub Copilot
+- TodoTree
+- 
 
