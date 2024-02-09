@@ -284,5 +284,5 @@ TSWLatexianTemp*
 
 
 # exceptions
-!chapters/08Comparison/subsecs/figures/01sar_transformer.pdf
-!chapters/11Appendix/figures/*.pdf
+#!chapters/08Comparison/subsecs/figures/01sar_transformer.pdf
+#!chapters/11Appendix/figures/*.pdf
