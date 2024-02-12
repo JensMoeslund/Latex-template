@@ -141,6 +141,7 @@
                 "-interaction=nonstopmode",
                 "--shell-escape",
                 "-file-line-error",
+                "-output-directory=out",
                 "%DOC%"
             ],
             "env": {}
@@ -157,7 +158,7 @@
             "name": "biber",
             "command": "biber",
             "args": [
-                "%DOCFILE%"
+                "%OUTDIR%/master"
             ],
             "env": {}
         },
@@ -219,7 +220,8 @@
             "env": {}
         }
     ],
+    "latex-workshop.latex.outDir": "./out/",
     "editor.wordWrap": "on",
     "git.ignoreLimitWarning": true,
-    "todo-tree.regex.regex": "(//|%|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)"   
+    "todo-tree.regex.regex": "(//|%|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)" 
 }
