@@ -6,7 +6,7 @@
                 "activate-env",
                 "python3-figures",
                 "pdflatex",
-                "bibtex",
+                "biber",
                 "pdflatex",
                 "pdflatex"
             ]
@@ -39,7 +39,7 @@
             "name": "pdflatex -> bibtex -> pdflatex * 2",
             "tools": [
                 "pdflatex",
-                "bibtex",
+                "biber",
                 "pdflatex",
                 "pdflatex"
             ]
@@ -143,6 +143,7 @@
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
+                "--shell-escape",
                 "-file-line-error",
                 "%DOC%"
             ],
@@ -151,6 +152,14 @@
         {
             "name": "bibtex",
             "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "biber",
+            "command": "biber",
             "args": [
                 "%DOCFILE%"
             ],
