@@ -3,12 +3,17 @@
         {
             "name": "Main-PDF",
             "tools": [
-                "activate-env",
                 "python3-figures",
                 "pdflatex",
                 "biber",
                 "pdflatex",
                 "pdflatex"
+            ]
+        },
+        {
+            "name": "Test",
+            "tools": [
+                "python3-figures",
             ]
         },
         {
@@ -77,16 +82,7 @@
             "name": "python3-figures",
             "command": "python",
             "args": [
-                "-m",
                 "%DIR%/make_fig.py"
-            ],
-            "env": {"PYTHONUNBUFFERED": 1}
-        },
-        {
-            "name": "activate-env",
-            "command": "source",
-            "args": [
-                "%DIR%/venv/bin/activate"
             ],
             "env": {}
         },
