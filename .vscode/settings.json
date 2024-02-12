@@ -3,12 +3,17 @@
         {
             "name": "Main-PDF",
             "tools": [
-                "activate-env",
                 "python3-figures",
                 "pdflatex",
-                "bibtex",
+                "biber",
                 "pdflatex",
                 "pdflatex"
+            ]
+        },
+        {
+            "name": "Test",
+            "tools": [
+                "python3-figures",
             ]
         },
         {
@@ -39,7 +44,7 @@
             "name": "pdflatex -> bibtex -> pdflatex * 2",
             "tools": [
                 "pdflatex",
-                "bibtex",
+                "biber",
                 "pdflatex",
                 "pdflatex"
             ]
@@ -77,16 +82,7 @@
             "name": "python3-figures",
             "command": "python",
             "args": [
-                "-m",
                 "%DIR%/make_fig.py"
-            ],
-            "env": {"PYTHONUNBUFFERED": 1}
-        },
-        {
-            "name": "activate-env",
-            "command": "source",
-            "args": [
-                "%DIR%/venv/bin/activate"
             ],
             "env": {}
         },
@@ -143,6 +139,7 @@
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
+                "--shell-escape",
                 "-file-line-error",
                 "%DOC%"
             ],
@@ -151,6 +148,14 @@
         {
             "name": "bibtex",
             "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "biber",
+            "command": "biber",
             "args": [
                 "%DOCFILE%"
             ],
