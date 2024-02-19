@@ -2,6 +2,7 @@ import os
 import hashlib
 import json
 import subprocess
+import platform
 
 checksums = dict()
 changes = dict()
@@ -18,11 +19,16 @@ def compile_figs(d: dict):
         print(f"Running file:\t{tail}")
         filepath = os.path.join(proj_root, head)
         os.chdir(filepath)
-        try:
-            subprocess.call([thisfilepath+"venv\\Scripts\\python.exe", filepath+"\\"+tail])
-        except:
-            subprocess.call([thisfilepath+".venv\\Scripts\\python.exe", filepath+"\\"+tail])
-            
+        if platform.system() == "Windows":
+            try:
+                subprocess.call([thisfilepath+os.path.join("venv","Scripts","python.exe"), filepath+"\\"+tail])
+            except:
+                subprocess.call([thisfilepath+os.path.join(".venv","Scripts","python.exe"), filepath+"\\"+tail])
+        else:
+            try:
+                subprocess.call([thisfilepath+os.path.join("venv","bin","python.exe"), filepath+"\\"+tail])
+            except:
+                subprocess.call([thisfilepath+os.path.join(".venv","bin","python.exe"), filepath+"\\"+tail])            
         #, Test uden at give venv.
 
 
