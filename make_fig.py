@@ -18,7 +18,12 @@ def compile_figs(d: dict):
         print(f"Running file:\t{tail}")
         filepath = os.path.join(proj_root, head)
         os.chdir(filepath)
-        subprocess.call([thisfilepath+"venv\\Scripts\\python.exe", filepath+"\\"+tail])
+        try:
+            subprocess.call([thisfilepath+"venv\\Scripts\\python.exe", filepath+"\\"+tail])
+        except:
+            subprocess.call([thisfilepath+".venv\\Scripts\\python.exe", filepath+"\\"+tail])
+            
+        #, Test uden at give venv.
 
 
 for root, dirs, files in os.walk("chapters"):
