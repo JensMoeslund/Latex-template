@@ -22,11 +22,13 @@ There are several different ways to do it Google is your friend ;-).
 
 
 ## IntelliJ Idea
+The IntelliJ Idea IDE is the recomended IDE for writing the report. 
 The jetbrains tools are provided by AAU. Please make sure you have installed the Jetbrains toolbox and IntelliJ Idea Ultimate before proceeding. 
 
 ### Clone the repo
 First download the repository. 
 
+### Setup the working evironement
 Then setup the right SDK, by pressing the gear in the to right corner, and then pressing project structure. 
 Under project settings and project. 
 Press the dropdown menu SDK: 
@@ -37,17 +39,38 @@ Base interpreter should be your install of python and location should be inside 
 
 Then to activate the virtual environment you just created open a terminal (Alt+F12) and run the following command: 
 
-  ```source venv/Scripts/activate```
+  ```bash
+  source venv/Scripts/activate
+  ```
+
 
 The run the command: 
 
-  ```pip install -r requirements.txt```
+  ```bash
+  pip install -r requirements.txt
+  ```
   
 If you would like to use some other python packages for creating the figures, simply add them to the requirements.txt and rerun the command. That way the rest of the group also gets the requirements when you push the next time. 
 
 
 
 ## Visual Studio Code
+If you like vscode better it is also an option. 
+Make sure VSCode is installed. 
+
+
+### Clone the repo
+First download the repository. 
+
+### Installing extentions
+Install the recomended extentions.
+
+### Setup the working environement
+Open the Command Palette by pressing ```(Ctrl + Shift + P)```
+The search for **Python: Create Environment**
+Select **Venv**
+Then select the base interpreter of your choise. 
+For the requirements choose "requirements.txt"
 
 
 
