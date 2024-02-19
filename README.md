@@ -17,7 +17,7 @@ Alternatively install MikTex. A guide can be found [here](https://miktex.org/dow
 
 ## Installing Python
 Python is used for creating all the figures in the report. Therefore python needs to be installed. 
-There are several different ways to do it Google is your friend ;-).
+There are several different ways to do it, Google is your friend ;-).
 
 
 
@@ -37,14 +37,17 @@ Add python SDK
 Select new environment
 Base interpreter should be your install of python and location should be inside the project in a directory called venv
 
-Then to activate the virtual environment you just created open a terminal (Alt+F12) and run the following command: 
+Then to activate the virtual environment you just created open a terminal (Alt+F12) and run the following command for Windows: 
 
   ```bash
   source venv/Scripts/activate
   ```
+and on linux: 
+  ```bash
+  source venv/bin/activate
+  ```
 
-
-The run the command: 
+Then run the command: 
 
   ```bash
   pip install -r requirements.txt
@@ -52,7 +55,8 @@ The run the command:
   
 If you would like to use some other python packages for creating the figures, simply add them to the requirements.txt and rerun the command. That way the rest of the group also gets the requirements when you push the next time. 
 
-
+## Comipilation
+To compile the pdf press and run the 'Main PDF' run configuration in the top right of the screen.
 
 ## Visual Studio Code
 If you like vscode better it is also an option. 
@@ -63,7 +67,7 @@ Make sure VSCode is installed.
 First download the repository. 
 
 ### Installing extentions
-Install the recomended extentions.
+VSCode automatically promts you to install the recomended extentions. 
 
 ### Setup the working environement
 Open the Command Palette by pressing ```(Ctrl + Shift + P)```
@@ -72,11 +76,47 @@ Select **Venv**
 Then select the base interpreter of your choise. 
 For the requirements choose "requirements.txt"
 
+## Compilation
+To compile the PDF press ```(Ctrl + Shift + P)``` and type 'LaTeX Workshop: Build with recipe' and choose 'Main PDF'
+
+Then you should be all set up to start cranking out report. 
 
 
 ## Extentions 
 Both for IntelliJ and VS Code there are several different extenstions which greatly enhances the experience. 
 - GitHub Copilot
 - TodoTree
-- 
 
+A feature which is unfortunately not included is comments. The alternative feature is using TODO's. By making a comment and starting it by "TODO:" the extention TodoTree will automatically find all these comments and make it easier to get an overview. 
+
+# Structure
+This template has already created a structure for you to use. Feel free to modify it to your needs. 
+## Chapters 
+Chapters are put in the 'chapters' folder. Each chapter has a number preceding it, this is done to ensure the chapters show up in the same order as in the report.
+
+Each chapter is a folder containing atleast two different things: 
+- The 'figures' folder
+- The meta.tex file
+
+## The figures folder
+The figures folder contains all the python scripts which creates the beautiful figures for your report. 
+
+## The meta.tex file
+The meta.tex file is where all the sections of the chapter is put in. The reason for the meta.tex file is to make it easier to move the different sections around and to reduce the risk of merge conflicts. 
+
+The meta.tex should also include the meta text/ introduction for the chapter. 
+
+# Tables
+Some macros has also been included to make tables easier to make and make them uniform. An example can be seen in the chapters\03Development\01Test.tex file. 
+
+The macros are: 
+- \toprule 
+- \midrule
+- \bottomrule
+
+## \toprule 
+The \toprule should be put in at the start of the table, before the heading. 
+## \midrule
+\midrule should be put after each new row in the table. 
+## \bottomrule
+Should be put after the last row in the table. 
