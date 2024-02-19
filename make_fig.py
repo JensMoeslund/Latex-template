@@ -29,7 +29,6 @@ def compile_figs(d: dict):
                 subprocess.call([thisfilepath+os.path.join("venv","bin","python.exe"), filepath+"\\"+tail])
             except:
                 subprocess.call([thisfilepath+os.path.join(".venv","bin","python.exe"), filepath+"\\"+tail])            
-        #, Test uden at give venv.
 
 
 for root, dirs, files in os.walk("chapters"):
