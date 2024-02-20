@@ -1,4 +1,4 @@
-# Report template
+# Latex template
 This is a template for writing reports at AAU. 
 
 The advantages of doing it this way: 
