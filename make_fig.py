@@ -10,7 +10,7 @@ old_data = dict()
 paths = list()
 
 proj_root = os.path.abspath(".")
-thisfilepath = os.path.dirname(__file__) + '\\'
+thisfilepath = os.path.dirname(__file__)
 def compile_figs(d: dict):
     global proj_root
     my_env = os.environ.copy()
@@ -21,14 +21,14 @@ def compile_figs(d: dict):
         os.chdir(filepath)
         if platform.system() == "Windows":
             try:
-                subprocess.call([thisfilepath+os.path.join("venv","Scripts","python.exe"), filepath+"\\"+tail])
+                subprocess.call([thisfilepath+os.path.join("venv","Scripts","python."), os.path.join(filepath,tail)])
             except:
-                subprocess.call([thisfilepath+os.path.join(".venv","Scripts","python.exe"), filepath+"\\"+tail])
+                subprocess.call([thisfilepath+os.path.join(".venv","Scripts","python"), os.path.join(filepath,tail)])
         else:
             try:
-                subprocess.call([thisfilepath+os.path.join("venv","bin","python.exe"), filepath+"\\"+tail])
+                subprocess.call([os.path.join(thisfilepath,"venv","bin","python"), os.path.join(filepath,tail)])
             except:
-                subprocess.call([thisfilepath+os.path.join(".venv","bin","python.exe"), filepath+"\\"+tail])            
+                subprocess.call([os.path.join(thisfilepath,".venv","bin","python"), os.path.join(filepath,tail)])            
 
 
 for root, dirs, files in os.walk("chapters"):
