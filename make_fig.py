@@ -21,9 +21,9 @@ def compile_figs(d: dict):
         os.chdir(filepath)
         if platform.system() == "Windows":
             try:
-                subprocess.call([thisfilepath+os.path.join("venv","Scripts","python."), os.path.join(filepath,tail)])
+                subprocess.call([os.path.join(thisfilepath,"venv","Scripts","python"), os.path.join(filepath,tail)])
             except:
-                subprocess.call([thisfilepath+os.path.join(".venv","Scripts","python"), os.path.join(filepath,tail)])
+                subprocess.call([os.path.join(thisfilepath,".venv","Scripts","python"), os.path.join(filepath,tail)])
         else:
             try:
                 subprocess.call([os.path.join(thisfilepath,"venv","bin","python"), os.path.join(filepath,tail)])
